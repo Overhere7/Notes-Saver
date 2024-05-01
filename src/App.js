@@ -1,25 +1,41 @@
-import logo from './logo.svg';
+import React , {useState} from 'react';
+import {jsPDF} from "jspdf";
 import './App.css';
+export default function App() {
+  const [noteText, setNoteText] = useState("");
+  const [title, setTitle] = useState([]);
 
-function App() {
+  const handleTitle = (e) => {
+    e.preventDefault();
+    setTitle(e.target.value);
+  }
+
+  const handleClick = () => {
+    const doc = new jsPDF();
+    doc.text(noteText, 10, 10);
+    doc.save(`${title}.pdf`);
+  }
+  const handleChange = (e) => {
+    e.preventDefault();
+    setNoteText(e.target.value);
+    
+  }
+  const handleErase = (e) => {
+    e.preventDefault();
+    setNoteText("");
+    setTitle("");
+  }
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+    <>
+      <div>
+       <form>
+       <input  type='text' placeholder='Enter Your Note Title' className='TitleTxt' onChange={handleTitle} value={title}></input>
+       </form>
+        <textarea rows={30} placeholder='Add Your Notes here...'  className='NoteWriting' onChange={handleChange} value={noteText}></textarea>
+      </div>
+        <button className='savebtn' onClick={handleClick}>Download</button>
+        <button className='savebtn' onClick={handleErase}>Erase All</button>
 
-export default App;
+    </>
+  )
+}
