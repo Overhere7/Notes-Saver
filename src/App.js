@@ -28,6 +28,7 @@ export default function App() {
   return (
     <>
       <div>
+        <h1 className='heading'>Notes App</h1>
        <form>
        <input  type='text' placeholder='Enter Your Note Title' className='TitleTxt' onChange={handleTitle} value={title}></input>
        </form>

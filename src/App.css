@@ -1,5 +1,14 @@
+body{
+  background-color: black;
+}
+.heading{
+  color: bisque;
+  margin-left: 40vw;
+  font-size: 40px;
+
+}
 .TitleTxt{
-  margin-top: 5vh;
+  margin-top: 1vh;
   margin-left: 25vw;
   width: 50vw;
   height: 5vh;
@@ -19,7 +28,10 @@
 .savebtn{
   font-size: 30px;
   margin-left: 27vw;
-  background-color: royalblue;
+  background-color: bisque;
   border-radius: 10px;
   margin-top: 3vh;
+}
+.savebtn:hover{
+  background-color:cyan;
 }
