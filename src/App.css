@@ -8,14 +8,19 @@ body{
 
 }
 .TitleTxt{
+  border-color: bisque;
   margin-top: 1vh;
   margin-left: 25vw;
   width: 50vw;
   height: 5vh;
   font-size: 30px;
+  background-color:black;
+  color: whitesmoke;
   
 }
 .NoteWriting{
+  border-color: bisque;
+  background-color: black;
   margin-top: 1vh;
   margin-left: 25vw;
   width: 50vw;
@@ -24,11 +29,12 @@ body{
 }
 ::placeholder{
   font-size: 3vh;
+  color: whitesmoke;
 }
 .savebtn{
   font-size: 30px;
   margin-left: 27vw;
-  background-color: bisque;
+  background-color:bisque;
   border-radius: 10px;
   margin-top: 3vh;
 }
